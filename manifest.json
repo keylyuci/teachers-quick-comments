@@ -1,1 +1,13 @@
-
+{
+  "manifest_version": 3,
+  "name": "Comment Helper",
+  "version": "1.0.0",
+  "description": "Save and quickly insert frequently used comments.",
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "permissions": ["storage", "contextMenus"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
