@@ -1,1 +1,1 @@
-
+console.log("Popup loaded")
