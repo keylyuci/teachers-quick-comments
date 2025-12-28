@@ -1,12 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-  <link rel="stylesheet" href="popup.css">
-  <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Helper</title>
+    <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h1>Comment Helper</h1>
-  <p>Your comments will appear here.</p>
-  <script src="popup.js"></script>
+    <div class="container">
+        <!-- Header with search -->
+        <div class="header">
+            <h1>💬 Comment Helper</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Поиск по комментариям...">
+                <button id="addCommentBtn" class="icon-btn" title="Добавить новый">+</button>
+            </div>
+            
+            <!-- Category filters -->
+            <div class="category-filters" id="categoryFilters">
+                <!-- Categories will be loaded dynamically -->
+            </div>
+        </div>
+
+        <!-- Comments list -->
+        <div class="comments-container" id="commentsContainer">
+            <div class="empty-state" id="emptyState">
+                <p>Комментариев пока нет</p>
+                <button id="addSampleBtn">Добавить примеры</button>
+            </div>
+            <!-- Comments will be loaded here -->
+        </div>
+
+        <!-- Add/Edit Comment Modal (hidden by default) -->
+        <div class="modal" id="commentModal">
+            <div class="modal-content">
+                <h2 id="modalTitle">Новый комментарий</h2>
+                
+                <div class="form-group">
+                    <label for="commentText">Текст комментария:</label>
+                    <textarea id="commentText" rows="4" placeholder="Введите текст комментария..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="shortcode">Короткая фраза (для поиска):</label>
+                    <input type="text" id="shortcode" placeholder="Например: аргументация, структура...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Категория:</label>
+                    <select id="category">
+                        <option value="Общее">Общее</option>
+                        <option value="Похвала">Похвала</option>
+                        <option value="Критика">Критика</option>
+                        <option value="Грамматика">Грамматика</option>
+                        <option value="Структура">Структура</option>
+                    </select>
+                </div>
+                
+                <div class="modal-buttons">
+                    <button id="cancelBtn" class="secondary">Отмена</button>
+                    <button id="saveBtn">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
 </body>
 </html>
